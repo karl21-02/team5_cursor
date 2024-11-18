@@ -2,6 +2,10 @@ spring:
   application:
     name: demo
 
+  profiles:
+    active: local
+    include: db
+
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
