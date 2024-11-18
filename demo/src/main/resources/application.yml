@@ -5,3 +5,7 @@ spring:
   mustache:
     suffix:
       html
+  thymeleaf:
+    cache: false
+    prefix: file:src/main/resources/templates/
+    suffix: .html
