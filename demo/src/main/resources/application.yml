@@ -2,10 +2,3 @@ spring:
   application:
     name:
       demo
-  mustache:
-    suffix:
-      html
-  thymeleaf:
-    cache: false
-    prefix: file:src/main/resources/templates/
-    suffix: .html
