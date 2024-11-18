@@ -1,4 +1,16 @@
 spring:
   application:
-    name:
-      demo
+    name: demo
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true

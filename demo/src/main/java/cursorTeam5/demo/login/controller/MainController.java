@@ -1,4 +1,4 @@
-package cursorTeam5.demo.controller;
+package cursorTeam5.demo.login.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +9,6 @@ public class MainController {
     @GetMapping("/")
     public String mainP(){
 
-        return "/main";
+        return "index";
     }
 }
