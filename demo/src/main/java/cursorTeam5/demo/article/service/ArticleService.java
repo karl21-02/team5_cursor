@@ -31,6 +31,7 @@ public class ArticleService {
         Article article = Article.builder()
                 .member(member)
                 .title(articleRequest.getTitle())
+                .content(articleRequest.getContent())
                 .build();
 
         articleRepository.delete(article);
@@ -55,6 +56,7 @@ public class ArticleService {
         Article article = Article.builder()
                 .member(member)
                 .title(articleRequest.getTitle())
+                .content(articleRequest.getContent())
                 .build();
         Article article1 = articleRepository.save(article);
         return new ArticleResponse(article1.getTitle(), article1.getContent());

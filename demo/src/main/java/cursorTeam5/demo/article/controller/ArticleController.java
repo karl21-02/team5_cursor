@@ -8,10 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.coyote.BadRequestException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,25 +26,25 @@ public class ArticleController {
     }
 
     @GetMapping("/getMemberAll")
-    public ResponseEntity<List<Article>> getArticlesByMemberId(ArticleRequest articleRequest) throws BadRequestException {
+    public ResponseEntity<List<Article>> getArticlesByMemberId(@RequestBody ArticleRequest articleRequest) throws BadRequestException {
         List<Article> articleResponse = articleService.findAllByMemberId(articleRequest);
         return ResponseEntity.ok(articleResponse);
     }
 
     @PutMapping("/save")
-    public ResponseEntity<ArticleResponse> saveArticle(ArticleRequest articleRequest) throws BadRequestException {
+    public ResponseEntity<ArticleResponse> saveArticle(@RequestBody ArticleRequest articleRequest) throws BadRequestException {
         ArticleResponse articleResponse = articleService.save(articleRequest);
         return ResponseEntity.ok(articleResponse);
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<Article> delete(ArticleRequest articleRequest) throws BadRequestException {
+    public ResponseEntity<Article> delete(@RequestBody ArticleRequest articleRequest) throws BadRequestException {
         articleService.delete(articleRequest);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/update")
-    public ArticleResponse updateArticle(ArticleRequest articleRequest) throws BadRequestException {
+    public ArticleResponse updateArticle(@RequestBody ArticleRequest articleRequest) throws BadRequestException {
         return articleService.updateTitle(articleRequest);
     }
 
